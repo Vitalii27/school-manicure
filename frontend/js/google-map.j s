@@ -1,0 +1,263 @@
+// // google map api
+// //AIzaSyDHHUnlsnx3cOKdUiz3cmH8z0V2VLOD-oA
+// //
+// var svgCloseIcon = '<svg enable-background="new 0 0 512 512" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512"> <g>	<path d="M501.5,512c-2.7,0-5.4-1-7.5-3.1L3.1,18C-1,13.9-1,7.2,3.1,3.1C7.2-1,13.9-1,18,3.1L508.9,494   c4.1,4.1,4.1,10.8,0,14.9C506.9,511,504.2,512,501.5,512z" fill="#6A6E7C" /><path d="M10.5,512c-2.7,0-5.4-1-7.5-3.1c-4.1-4.1-4.1-10.8,0-14.9L494,3.1c4.1-4.1,10.8-4.1,14.9,0   c4.1,4.1,4.1,10.8,0,14.9L18,508.9C15.9,511,13.2,512,10.5,512z" fill="#6A6E7C" /></g></svg>';
+
+// var markersInstance = {};
+// function closeInfoWindow() {
+// 	if (infoWindow) {
+// 		infoWindow.close();
+// 		for (var markerKey in markersInstance) {
+// 			markersInstance[markerKey].setIcon("img/icon/marker.png");
+// 		}
+// 	}
+// }
+
+// function  customizeInfoWindow(infoWindow) {
+// 	// *
+// 	// START INFOWINDOW CUSTOMIZE.
+// 	// The google.maps.event.addListener() event expects
+// 	// the creation of the infowindow HTML structure 'domready'
+// 	// and before the opening of the infowindow, defined styles are applied.
+// 	// *
+// 	if (infoWindow) {
+// 		google.maps.event.addListener(infoWindow, 'domready', function () {
+// 			// Reference to the DIV that wraps the bottom of infowindow
+// 			var iwOuter = $('.gm-style-iw');
+
+// 			/* Since this div is in a position prior to .gm-div style-iw.
+// 			 * We use jQuery and create a iwBackground variable,
+// 			 * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
+// 			 */
+// 			var iwBackground = iwOuter.prev();
+
+// 			// Removes background shadow DIV
+// 			iwBackground.children(':nth-child(2)').css({'display': 'none'});
+
+// 			// Removes white background DIV
+// 			iwBackground.children(':nth-child(4)').css({'display': 'none'});
+
+// 			// Moves the infowindow 115px to the right.
+// 			//iwOuter.parent().parent().css({left: '0px'});
+
+// 			// Moves the shadow of the bottom arrow.
+// 			iwBackground.children(':nth-child(1)').css('display', "none");
+// 			// Remove the bottom arrow.
+
+// 			iwBackground.children(':nth-child(3)').css('display', "none");
+
+// 			// Changes the desired tail shadow color.
+// 			/*iwBackground.children(':nth-child(3)').find('div').children().css({
+// 				'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px',
+// 				'z-index': '1'
+// 			});*/
+
+// 			// Reference to the div that groups the close button elements.
+// 			var iwCloseBtn = iwOuter.next();
+// 			// hide close btn
+// 			iwCloseBtn.css('display', "none");
+
+// 			// The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
+// 			// iwCloseBtn.mouseout(function () {
+// 			// 	$(this).css({opacity: '1'});
+// 			// });
+// 		});
+// 	}
+// }
+
+// // create infowindow
+// var infoWindow = null;
+// function addInfoWindow(marker, message) {
+// 	// show infoWindow
+// 	google.maps.event.addListener(marker, 'click', function () {
+// 		closeInfoWindow();
+// 		infoWindow = new google.maps.InfoWindow({
+// 			content: '<div class="ballon"><span class="ballon__close" onclick="closeInfoWindow();">' + svgCloseIcon + '</span>' + message + '</div>',
+// 			maxWidth: 400
+// 		});
+// 		// set custom styles
+// 		customizeInfoWindow(infoWindow);
+// 		// hide marker
+// 		marker.setIcon("img/icon/marker-empty.png");
+// 		// waiting styles
+// 		setTimeout(function () {
+// 			infoWindow.open(gMap, marker);
+// 		}, 70);
+// 	});
+// } // addInfoWindow
+
+// function initMap(mapConfig) {
+
+// 	// Specify features and elements to define styles.
+// 	var styleArray = [
+// 		{
+// 			featureType: "all",
+// 			stylers: [
+// 				{
+// 					//saturation: 0
+// 				}
+// 			]
+// 		}, {
+// 			featureType: "poi.business",
+// 			//elementType: "labels",
+// 			stylers: [
+// 				{
+// 					//visibility: "off"
+// 				}
+// 			]
+// 		}
+// 	];
+
+// 	var isDraggable = $(document).width() > 768 ? true : false; // If document (your website) is wider than 768px, isDraggable = true, else isDraggable = false
+
+// 	var mapOptions = {
+// 		draggable: isDraggable,
+// 		center: {
+// 			lat: mapConfig.mapCenter[0],
+// 			lng: mapConfig.mapCenter[1]
+// 		},
+// 		// Apply the map style array to the map.
+// 		styles: styleArray,
+// 		zoom: mapConfig.zoom,
+// 		mapTypeId: google.maps.MapTypeId.ROADMAP,
+// 		panControl: false,
+// 		zoomControl: true,
+// 		mapTypeControl: false,
+// 		scaleControl: false,
+// 		streetViewControl: true,
+// 		overviewMapControl: false,
+// 		scrollwheel: false // Prevent users to start zooming the map when scrolling down the page
+// 		//... options options options
+// 	};
+// 	// Create a map object and specify the DOM element for display.
+// 	gMap = new google.maps.Map(document.getElementById('g-map'), mapOptions);
+
+// 	// Event that closes the Info Window with a click on the map
+// 	google.maps.event.addListener(gMap, 'click', function () {
+// 		closeInfoWindow();
+// 	});
+
+// 	// create markers
+// 	var markers = mapConfig.markers;
+// 	var markerPosition = {};
+
+// 	for (var marker in markers) {
+
+// 		// // create new marker position instance
+// 		markerPosition[marker] = new google.maps.LatLng(markers[marker].center[0], markers[marker].center[1]);
+// 		// create new marker instance
+// 		markersInstance[marker] = new google.maps.Marker({
+// 			position: markerPosition[marker],
+// 			map: gMap,
+// 			title: markers[marker].title,
+// 			icon: "img/icon/marker.png"
+// 		});
+
+// 		// create and show infoWindow on click
+// 		addInfoWindow(markersInstance[marker], markers[marker].baloonContent);
+
+
+// 		//console.log(markersInstance[marker]);
+// 	}
+
+
+// }// initMap
+
+// function centeringMarker(latitude, longitude) {
+// 	//centering map
+// 	// because gladiolus
+// 	//gMap.setCenter({lat: latitude, lng: longitude});
+// 	gMap.panTo({lat: latitude, lng: longitude});
+// 	//return false;
+// }
+
+// $(window).on("load", function () {
+// 	if (typeof mapConfig != "undefined") {
+// 		var gMap;
+// 		initMap(mapConfig);
+// 	}
+// });
+// // google map api end
+
+
+
+
+// function initMap() {
+
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 12,
+//         center: uluru,
+//         scrollwheel: false,
+//     });
+//     var marker = new google.maps.Marker({
+//         position: uluru,
+//         map: map
+// 	});
+
+// }
+// function initMap() {
+
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 12,
+//         center: { lat: 49.980735, lng: 35.870231 },
+//         mapTypeId: 'terrain'
+//     });
+
+//     var flightPlanCoordinates = [
+//         { lat: 37.772, lng: -122.214 },
+//         { lat: 21.291, lng: -157.821 },
+//         { lat: -18.142, lng: 178.431 },
+//         { lat: -27.467, lng: 153.027 }
+//     ];
+//     var flightPath = new google.maps.Polyline({
+//         path: flightPlanCoordinates,
+//         geodesic: true,
+//         strokeColor: '#FF0000',
+//         strokeOpacity: 1.0,
+//         strokeWeight: 1
+//     });
+
+//     flightPath.setMap(map);
+// }
+function initMap() {
+    var uluru = { lat: 49.980735, lng: 35.870231 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: uluru,
+        mapTypeId: 'terrain'
+    });
+
+    // Define the LatLng coordinates for the polygon's path.
+    var flightPlanCoordinates = [
+        { lat: 49.976114, lng: 35.688329 },
+        { lat: 49.977729, lng: 35.689316 },
+        { lat: 49.975438, lng: 35.711718 },
+        { lat: 49.974500, lng: 35.710946 },
+        { lat: 49.972540, lng: 35.715838 },
+        { lat: 49.969173, lng: 35.716954 },
+        { lat: 49.972761, lng: 35.720216 },
+        { lat: 49.971878, lng: 35.722190 },
+        { lat: 49.968925, lng: 35.722362 },
+        { lat: 49.968283, lng: 35.723735 },
+        { lat: 49.967510, lng: 35.723059 },
+        { lat: 49.967510, lng: 35.723059 },
+        { lat: 49.968366, lng: 35.713703 },
+        { lat: 49.968366, lng: 35.712394 },
+        { lat: 49.967372, lng: 35.711600 },
+        { lat: 49.968269, lng: 35.705742 },
+        { lat: 49.969518, lng: 35.705324 },
+        { lat: 49.969518, lng: 35.705324 },
+
+    ];
+
+    // Construct the polygon.
+    var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+
+    flightPath.setMap(map);
+}

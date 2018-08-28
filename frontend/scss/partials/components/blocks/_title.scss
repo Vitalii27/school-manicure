@@ -1,0 +1,13 @@
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    &--blue {
+        color: $blue;
+    }
+    &--grey {
+        color: $grey;
+    }
+}

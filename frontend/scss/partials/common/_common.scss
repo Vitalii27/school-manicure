@@ -1,0 +1,50 @@
+/* common.scss */
+
+/* selection */
+
+*::selection {
+  color: $grey;
+  background: rgba($grey, 0.3);
+}
+
+:root {
+  font-size: $html-font-size;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  min-width: $content-min-width;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: $black;
+  background: $white;
+  overflow-x: hidden;
+  font-family: $main-font;
+  font-weight: 400;
+}
+
+section, .section {
+  position: relative;
+}
+img{
+  max-width: 100%;
+}
+
+//@media only screen and (max-width: $screen-md-max) {
+//  section {
+//    padding: 0 15px;
+//  }
+//}
+
+/* common.scss end */

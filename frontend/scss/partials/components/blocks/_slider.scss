@@ -1,0 +1,32 @@
+.arrow-slide {
+  background-image: url('../../assets/images/icon/arrow-slide.png');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 4.5rem;
+  height: 4.5rem;
+  &:hover {
+    background-image: url('../../assets/images/icon/arrow-slide-orange.png');
+
+  }
+}
+
+.arrow-right-slide {
+  transform: rotate(180deg);
+}
+
+.slider_btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider_btn--next {
+  right: -3rem;
+}
+
+.slider_btn--prev {
+  left: -3rem;
+}

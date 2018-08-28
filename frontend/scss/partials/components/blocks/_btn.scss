@@ -1,0 +1,27 @@
+.btn{
+  color: $white;
+  background-color: $orange;
+  display: inline-block;
+  font-size: 1.5rem;
+  border-radius: 5rem;
+  padding: .6rem 3.2rem;
+  transition: all .25s;
+  line-height: 1.2;
+  border: 1px solid $orange;
+  font-weight: 600;
+  text-align: center;
+  &:hover {
+    color: $orange;
+    background-color: transparent;
+    //border-color: $white;
+  }
+
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+  .btn{
+    padding: .5rem 2rem;
+    font-size: 1.4rem;
+  }
+}
+

@@ -1,0 +1,112 @@
+.hero {
+  padding-top: 9rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #fcf1f2;
+  background: linear-gradient(to right, #fdf6f9 0%, #fbecef 100%);
+  overflow: hidden;
+  &_img {
+    position: absolute;
+    bottom: -5rem;
+    right: 0;
+    img {
+      max-width: none;
+    }
+  }
+  &_content {
+    padding-top: 18rem;
+    padding-bottom: 12.5rem;
+    position: relative;
+    z-index: 3;
+  }
+  &_title {
+    font-size: 4.8rem;
+    font-weight: 600;
+  }
+  &_subtitle {
+    font-weight: 600;
+    font-size: 3.6rem;
+    margin-top: 1.5rem;
+  }
+  &_list {
+    display: flex;
+    margin-top: 5.5rem;
+  }
+  &_item {
+    margin-right: 10rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    p {
+      margin-top: 2.5rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xlg-max) {
+  .hero {
+
+    &_content {
+      padding-top: 15rem;
+    }
+    &_title {
+      font-size: 4.3rem;
+    }
+    &_subtitle {
+      font-size: 3.2rem;
+    }
+    &_item {
+      margin-right: 7rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-sm-max) {
+  .hero {
+
+    &_content {
+      padding-top: 10rem;
+    }
+    &_title {
+      font-size: 4rem;
+    }
+    &_subtitle {
+      font-size: 2.8rem;
+    }
+    &_item {
+      margin-right: 4rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+  .hero {
+    text-align: center;
+    &_img {
+      display: none;
+    }
+    &_content {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    &_title {
+      font-size: 3rem;
+    }
+    &_subtitle {
+      font-size: 2rem;
+    }
+    &_list {
+      flex-direction: column;
+      margin-top: 3rem;
+    }
+    &_item {
+      margin-top: 2rem;
+      margin-right: 0;
+      P{
+        margin-top: 1rem;
+      }
+    }
+  }
+}
