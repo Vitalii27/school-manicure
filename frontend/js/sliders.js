@@ -41,12 +41,25 @@ jQuery(function ($) {
 
         //accessibility: false // prevent page scroll up on autoplay
     };
+ var reviewSlider = $('.js-review-slider');
+    var reviewOption = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: true,
+        nextArrow: '<button type="button" class="slider_btn--next slider_btn"> ' + arrowRight + ' </button>',
+        prevArrow: '<button type="button" class="slider_btn--prev slider_btn">' + arrowLeft + '</button>',
+
+        //accessibility: false // prevent page scroll up on autoplay
+    };
 
 
 
 
     // init slider
     partnersSlider.slick(partnersOption);
+    reviewSlider.slick(reviewOption);
 
 
 }); // ready

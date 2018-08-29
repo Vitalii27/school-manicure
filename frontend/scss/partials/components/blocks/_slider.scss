@@ -30,3 +30,16 @@
 .slider_btn--prev {
   left: -3rem;
 }
+.slick-dots li button:before{
+  font-size: 11px;
+}
+.slick-dots li.slick-active button:before{
+  color: $orange;
+  font-size: 18px;
+}
+.slick-dots li{
+  margin: 0;
+}
+.slick-dots{
+  bottom: -22px;
+}
