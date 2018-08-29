@@ -22,17 +22,17 @@ jQuery(function ($) {
             settings: {
                 slidesToShow: 4,
             }
-        },{
+        }, {
             breakpoint: 768,
             settings: {
                 slidesToShow: 3,
             }
-        },{
+        }, {
             breakpoint: 600,
             settings: {
                 slidesToShow: 2,
             }
-        },{
+        }, {
             breakpoint: 321,
             settings: {
                 slidesToShow: 1,
@@ -41,7 +41,7 @@ jQuery(function ($) {
 
         //accessibility: false // prevent page scroll up on autoplay
     };
- var reviewSlider = $('.js-review-slider');
+    var reviewSlider = $('.js-review-slider');
     var reviewOption = {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -53,13 +53,35 @@ jQuery(function ($) {
 
         //accessibility: false // prevent page scroll up on autoplay
     };
+    var photoSlider = $('.js-photo-slider');
+    var photoOption = {
+        slidesToShow: 5,
+        slidesToScroll: 1,
 
-
+        // infinite: true,
+        arrows: true,
+        dots: false,
+        nextArrow: '<button type="button" class="slider_btn--next slider_btn"> ' + arrowRight + ' </button>',
+        prevArrow: '<button type="button" class="slider_btn--prev slider_btn">' + arrowLeft + '</button>',
+        responsive: [  {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+            }
+        },  {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+            }
+        }]
+        //accessibility: false // prevent page scroll up on autoplay
+    };
 
 
     // init slider
     partnersSlider.slick(partnersOption);
     reviewSlider.slick(reviewOption);
+    photoSlider.slick(photoOption);
 
 
 }); // ready
