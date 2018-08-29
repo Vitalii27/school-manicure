@@ -1,0 +1,29 @@
+.realy-study{
+  .program_item{
+    flex-basis: 31%;
+    width: 31%;
+  }
+  .program_text-desc{
+    margin-top: 4.5rem;
+  }
+  .program_img{
+    height: 25.5rem;
+  }
+}
+@media only screen and (max-width: $screen-xs-max) {
+  .realy-study{
+    .program_item{
+      flex-basis: 48.5%;
+      width: 48.5%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .realy-study{
+    .program_item{
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+}

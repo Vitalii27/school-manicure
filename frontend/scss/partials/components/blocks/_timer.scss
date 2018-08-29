@@ -1,0 +1,47 @@
+.action_content-timer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50rem;
+  margin: 3.5rem auto 0;
+}
+
+.timer-number {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $red;
+  border-radius: 50%;
+  color: $white;
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+
+}
+
+.timer-name {
+  font-size: 18px;
+  text-transform: lowercase;
+  //margin-top: 1.2rem;
+  line-height: 0;
+}
+
+@media only screen and (max-width: $screen-xxs) {
+  .action_content-timer {
+    max-width: 30rem;
+  }
+  .timer-number {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $red;
+    border-radius: 50%;
+    color: $white;
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+
+  }
+
+}

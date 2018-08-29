@@ -1,0 +1,53 @@
+.form {
+  &_container {
+    display: flex;
+    justify-content: center;
+  }
+  &_input-block{
+    max-width: 42rem;
+
+    width: 100%;
+    margin-right: 2.8rem;
+  }
+  &_input {
+    padding: 1.9rem 2.5rem 1.9rem 2.5rem;
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    color: #656565;
+    font-weight: 300;
+    border: 1px solid #d4d4d4;
+    background-color: transparent;
+
+    width: 100%;
+    @include placeholder {
+      color: #656565;
+    }
+    &:focus{
+      border: 1px solid $orange;
+    }
+  }
+  &_btn{
+    @extend .btn;
+    padding-top: 1.9rem;
+    padding-bottom: 1.9rem;
+    padding-left: 5.11rem;
+    padding-right: 5.11rem;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+  .form {
+    &_container {
+      flex-direction: column;
+      align-items: center;
+    }
+    &_input-block, &_btn-block {
+      margin-top: 2rem;
+      margin-right: 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

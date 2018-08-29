@@ -1,13 +1,11 @@
 .title {
-    font-size: 3rem;
+    font-size: 3.6rem;
     font-weight: 600;
-    color: $white;
-    text-transform: uppercase;
+    color: #1e1e1e;
     text-align: center;
-    &--blue {
-        color: $blue;
-    }
-    &--grey {
-        color: $grey;
+}
+@media only screen and (max-width: $screen-xs-max) {
+    .title{
+        font-size: 2.6rem;
     }
 }

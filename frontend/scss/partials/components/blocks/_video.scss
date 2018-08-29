@@ -1,0 +1,41 @@
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
+
+}
+
+.plyr__controls {
+  .plyr__control {
+    &:hover, &:active, &:focus {
+      background: $orange !important;
+      box-shadow: 0 0 0 5px rgba($orange, .5) !important;
+    }
+  }
+}
+
+.plyr__control--overlaid {
+  background: transparent !important;
+  box-shadow: none !important;
+  &:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  svg {
+    fill: $orange !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+}
+
+.plyr--full-ui input[type=range] {
+  color: $orange !important;
+}
+
+.plyr--video, .plyr__controls {
+  background: transparent !important;
+}
+
+.plyr__video-wrapper {
+
+  border-radius: 2rem !important;
+
+
+}

@@ -12,7 +12,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba($black, .5);
+    background-color: rgba($black, .7);
   }
   &_content {
     position: relative;
@@ -30,19 +30,33 @@
       font-weight: 600;
     }
     div {
-      color: $white;
+      color: #f2f2f2;
       font-size: 2.4rem;
+      margin-top: 1rem;
+
     }
   }
   &_btn-block {
     position: relative;
     z-index: 2;
     text-align: center;
+
   }
 }
-
+.sub-section--second{
+  .sub-section_content{
+    max-width: 105rem;
+  }
+  p{
+    font-size: 3.6rem;
+  }
+}
 .sub-section_link {
-
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-top: 4.5rem;
 }
 
 @media only screen and (max-width: $screen-xs-max) {

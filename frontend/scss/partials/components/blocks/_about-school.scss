@@ -1,0 +1,98 @@
+.about-school {
+  background-color: #f0eeee;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  &_video-block {
+    margin-top: 6rem;
+    display: flex;
+  }
+  &_video {
+    margin-right: 3.2rem;
+    flex-basis: 48%;
+    width: 48%;
+    box-shadow: 0 3px 36px 4px rgba(0, 0, 0, .2);
+    height: 100%;
+    border-radius: 2rem;
+  }
+  &_desc {
+    flex-basis: 48%;
+    width: 48%;
+    &-title {
+      font-weight: 600;
+      font-size: 3rem;
+      margin-top: 2.5rem;
+    }
+    &-text {
+      line-height: 1.3;
+
+      p {
+        margin-top: 2rem;
+        font-weight: 300;
+      }
+    }
+  }
+  &_icon-block {
+    margin-top: 6rem;
+  }
+  &_list {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_item {
+    &-block{
+      width: 90px;
+      height: 90px;
+      margin:  0 auto;
+    }
+    text-align: center;
+    p {
+      margin-top: 3.4rem;
+      font-weight: 600;
+
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-sm-max) {
+  .about-school {
+    &_video-block {
+      display: block;
+    }
+    &_video, &_desc {
+      flex-basis: 100%;
+      width: 100%;
+    }
+    &_desc{
+      text-align: center;
+    }
+
+  }
+}
+@media only screen and (max-width: $screen-xs-max) {
+  .about-school{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .about-school_desc-title{
+    font-size: 2.6rem;
+  }
+  .about-school_list{
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-school_item{
+    margin-top: 3rem;
+  }
+
+  .about-school_item p{
+    margin-top: 1.5rem;
+  }
+  .about-school_icon-block{
+    margin-top: 3rem;
+  }
+}
