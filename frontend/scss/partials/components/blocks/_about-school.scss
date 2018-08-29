@@ -2,6 +2,16 @@
   background-color: #f0eeee;
   padding-top: 9rem;
   padding-bottom: 9rem;
+  position: relative;
+  &_bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &_content{
+    position: relative;
+    z-index: 3;
+  }
   &_video-block {
     margin-top: 6rem;
     display: flex;
