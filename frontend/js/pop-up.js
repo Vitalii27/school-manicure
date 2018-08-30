@@ -26,7 +26,7 @@ var PopUpModule = (function($) {
                 removalDelay: _removalDelay,
                 mainClass: 'mfp-fade',
                 overflowY: 'hidden',
-                showCloseBtn: false,
+                showCloseBtn: true,
                 callbacks: {
                     open: isOpenPopup,
                     close: isClosePopup
@@ -43,7 +43,7 @@ var PopUpModule = (function($) {
                 removalDelay: _removalDelay,
                 mainClass: 'mfp-fade',
                 overflowY: 'hidden',
-                showCloseBtn: false,
+                showCloseBtn: true,
                 callbacks: {
                     open: isOpenPopup,
                     ajaxContentAdded: function() {
@@ -97,7 +97,6 @@ var PopUpModule = (function($) {
 }(jQuery));
 
 jQuery(function($) {
-    PopUpModule.initInline(".header_btn-link");
-    PopUpModule.initInline(".events_link");
-    //PopUpModule.initAjax(".js-pop-up-ajax");
+    PopUpModule.initInline(".js-pop-up");
+
 }); // ready

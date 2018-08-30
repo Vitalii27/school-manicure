@@ -5,10 +5,11 @@
   width: 100%;
   z-index: 555;
   background-color: $white;
-  position: absolute;
+  position: fixed;
   font-family: $main-font;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .2);
   padding: .7rem 0;
+  transition: padding-top .25s, padding-bottom .25s;
   &_container {
     display: flex;
     align-items: center;
@@ -16,11 +17,7 @@
     position: relative;
 
   }
-  &_logo {
 
-    display: flex;
-    align-items: center;
-  }
   &_text {
     margin-left: 1rem;
     font-size: 1.5rem;
@@ -32,7 +29,8 @@
 
   }
   &_link {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 100%;
   }
   &_phone {
@@ -59,7 +57,13 @@
   }
 
 }
+.is-fixed{
+  .swipe-menu__list>li a:before{
+    bottom: 0;
+  }
+  padding: 0;
 
+}
 @media only screen and (max-width: $screen-sm-max) {
   .header {
     &_phone {
@@ -95,6 +99,11 @@
 
 @media only screen and (max-width: $screen-xxs) {
   .header{
+    .is-fixed{
+
+      padding: .8rem 0 .8rem 0;
+
+    }
     &_btn-link{
       padding: .3rem 1.2rem;
       font-size: 1.2rem;

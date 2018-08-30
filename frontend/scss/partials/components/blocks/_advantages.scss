@@ -49,6 +49,10 @@
   .advantages{
 
       &_item{
+        &:first-child{
+          margin-top: 1rem;
+        }
+        margin-top: 3rem;
         flex-basis: 100%;
         width: 100%;
       }

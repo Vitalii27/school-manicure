@@ -1,11 +1,11 @@
 .reviews {
   background-color: #f0eeee;
-  .slider_btn{
+  .slider_btn {
     top: 54%;
   }
   padding-top: 9rem;
   padding-bottom: 9rem;
-  &_wrapp{
+  &_wrapp {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -24,8 +24,9 @@
     position: relative;
   }
   &_inform {
-    margin-right: 5rem; text-align: center;
-min-width: 20rem;
+    margin-right: 5rem;
+    text-align: center;
+    min-width: 20rem;
   }
   &_name {
 
@@ -50,7 +51,7 @@ min-width: 20rem;
     a {
       color: $orange;
       font-weight: 600;
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -71,25 +72,38 @@ min-width: 20rem;
 }
 
 @media only screen and (max-width: $screen-xs-max) {
-  .reviews{
+  .reviews {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    &_wrapp{
+    &_wrapp {
       padding-left: 4rem;
       padding-right: 4rem;
     }
 
-    &_block{
+    &_block {
       flex-direction: column;
     }
-    &_inform{
+    &_inform {
       flex-basis: 100%;
     }
-    &_desc{
+    &_desc {
       text-align: center;
       margin-top: 2rem;
       flex-basis: 100%;
     }
 
+  }
+}
+
+@media only screen and (max-width: $screen-xxs) {
+  .reviews {
+    &_wrapp {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    &_block{
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 }

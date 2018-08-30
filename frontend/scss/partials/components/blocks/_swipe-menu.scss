@@ -117,7 +117,7 @@ body.is-swipe-menu-shown {
                 }
             }
             &:focus {
-                color: $blue;
+                color: $orange;
                 &:before {
                     width: 100%;
                 }
@@ -127,7 +127,7 @@ body.is-swipe-menu-shown {
 }
 
 .active {
-    color: $blue;
+    color: $orange;
     &:before {
         content: '';
         position: absolute;

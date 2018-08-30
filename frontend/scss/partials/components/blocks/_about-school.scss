@@ -23,6 +23,11 @@
     box-shadow: 0 3px 36px 4px rgba(0, 0, 0, .2);
     height: 100%;
     border-radius: 2rem;
+    video{
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+       max-width: 58rem;
+      }
+    }
   }
   &_desc {
     flex-basis: 48%;

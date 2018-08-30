@@ -1,61 +1,56 @@
 .popup {
     display: none;
 }
-
+.pop-up-is-showed{
+    overflow: hidden !important;
+    header{
+        padding-right: 1.7rem;
+    }
+}
 .pop-up_content {
-    max-width: 81.5rem;
+    max-width: 56rem;
     background: $white;
     text-align: center;
     margin: 0 auto;
     display: block;
     position: relative;
     top: 50%;
+    padding-top: .5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
-.booking {
-    &_content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+.callback{
+    border-radius: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    &_block{
+        margin-top: 2rem;
     }
-    &_title {
-        font-size: 3rem;
-        padding-top: 5.5rem;
-        padding-bottom: 2.7rem;
-    }
-    &_input {
-        border: 1px solid $grey !important;
-        margin-top: 2.5rem !important;
-        color: $grey !important;
-        max-width: 46.5rem !important;
-        @include placeholder {
-            color: $grey !important;
-        }
-    }
-    &_btn {
-
-        background: transparent;
+    &_form{
         margin-top: 2.5rem;
-        margin-bottom: 6rem;
     }
+
 }
 
 .mfp-close {
-    right: -7%;
+    right: 2%;
+    top: 3%;
     font-size: 5rem;
-    color: $white !important;
+    color: $black !important;
+
     &:before {
         width: 1px;
         height: 5px;
         background: $white;
     }
+    &:hover{
+        color: $orange !important;
+    }
 }
 
 .mfp-bg {
-    background: rgba(42, 128, 127, 1) !important;
+    background: rgba($black, .8) !important;
 }
 
 .mfp-fade.mfp-bg {
@@ -64,7 +59,9 @@
     -moz-transition: all 0.15s ease-out;
     transition: all 0.15s ease-out;
 }
-
+.callback_input{
+    max-width: 42rem;
+}
 
 /* overlay animate in */
 
@@ -109,7 +106,7 @@
     .mfp-close {
         right: 1%;
         top: 1%;
-        color: $grey !important;
+
     }
     .booking {
         &_title {
@@ -122,6 +119,7 @@
     .mfp-close {
         font-size: 4rem;
     }
+
     .booking {
         &_title {
             font-size: 2rem;

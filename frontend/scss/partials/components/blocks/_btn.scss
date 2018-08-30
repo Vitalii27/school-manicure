@@ -17,7 +17,13 @@
   }
 
 }
-
+.btn-form{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 2rem;
+}
 @media only screen and (max-width: $screen-xs-max) {
   .btn{
     padding: .5rem 2rem;
